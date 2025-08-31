@@ -10,7 +10,7 @@ export async function createPost(content: string, image: string) {
 
     if (!userId) return;
 
-    const post = await prisma.post.create({
+    const postss = await prisma.post.create({
       data: {
         content,
         image,
@@ -19,7 +19,7 @@ export async function createPost(content: string, image: string) {
     });
 
     revalidatePath("/"); // purge the cache for the home page
-    return { success: true, post };
+    return { success: true, postss };
   } catch (error) {
     console.error("Failed to create post:", error);
     return { success: false, error: "Failed to create post" };

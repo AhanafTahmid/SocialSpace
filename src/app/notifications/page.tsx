@@ -117,6 +117,9 @@ function NotificationsPage() {
                     <p className="text-sm text-muted-foreground pl-6">
                       {formatDistanceToNow(new Date(notification.createdAt), { addSuffix: true })}
                     </p>
+
+                   
+
                   </div>
                 </div>
               ))
